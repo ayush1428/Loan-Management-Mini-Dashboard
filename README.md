@@ -83,8 +83,8 @@ A small Angular application simulating a loan management dashboard with:
 ---
 
 
-### How to Run
-# clone repo
+# How to Run
+### clone repo
 git clone https://github.com/ayush1428/Loan-Management-Mini-Dashboard.git
 
 cd Loan-Management-Mini-Dashboard
