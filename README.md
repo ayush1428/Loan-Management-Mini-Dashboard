@@ -4,7 +4,7 @@ A small Angular application simulating a loan management dashboard with:
 
 - Loan list screen (search + pagination)
 - Loan detail screen (summary + repayment history)
-- “Add Repayment” modal with reactive forms
+- 'Add Repayment' modal with reactive forms
 - Mock API using an in-memory service + RxJS
 
 ---
@@ -76,5 +76,6 @@ A small Angular application simulating a loan management dashboard with:
 1. Repayment always reduces **outstanding interest first**
 2. Any remaining amount reduces **outstanding principal**
 3. Running balance is calculated as:
-        - First repayment: principal + interest – amount
-        - Next repayments: last runningBalance – amount
+
+    First repayment: principal + interest – amount
+    Next repayments: last runningBalance – amount
