@@ -78,4 +78,5 @@ A small Angular application simulating a loan management dashboard with:
 3. Running balance is calculated as:
 
     First repayment: principal + interest – amount
+    
     Next repayments: last runningBalance – amount
