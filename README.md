@@ -97,7 +97,7 @@ A small Angular application simulating a loan management dashboard with:
 # Screenshots
 
 ### Loan List -
-![alt text](image.png)
+![alt text](image-4.png)
 
 ### Selected Loan Detail -  
 ![alt text](image-1.png)
