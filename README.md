@@ -91,3 +91,5 @@ A small Angular application simulating a loan management dashboard with:
 ### Install dependencies - npm install
 
 ### Run application - ng serve 
+
+![alt text](image.png)
