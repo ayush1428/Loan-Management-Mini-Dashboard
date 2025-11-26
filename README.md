@@ -79,3 +79,18 @@ A small Angular application simulating a loan management dashboard with:
     First repayment: principal + interest – amount
 
     Next repayments: last runningBalance – amount
+
+---
+
+
+### How to Run
+# clone repo
+git clone https://github.com/ayush1428/Loan-Management-Mini-Dashboard.git
+
+cd Loan-Management-Mini-Dashboard
+
+# install dependencies
+npm install
+
+# run application
+ng serve 
