@@ -92,4 +92,18 @@ A small Angular application simulating a loan management dashboard with:
 
 ### Run application - ng serve 
 
+---
+
+# Screenshots
+
+### Loan List -
 ![alt text](image.png)
+
+### Selected Loan Detail -  
+![alt text](image-1.png)
+
+### Repayment Modal -
+![alt text](image-2.png)
+
+### Repayment History - 
+![alt text](image-3.png)
