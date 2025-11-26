@@ -1,4 +1,4 @@
-# Loan Management Dashboard (Frontend Assessment)
+# Loan Management Dashboard
 
 A small Angular application simulating a loan management dashboard with:
 
@@ -35,8 +35,6 @@ A small Angular application simulating a loan management dashboard with:
 - Client-side pagination (Material `MatPaginator`)
 - Clickable rows:
   - Clicking a row navigates to the **Loan Detail** screen for that loan
-- Pagination state preserved:
-  - When you open a loan and click **“\< Back”**, it returns to the **same page** in the loan list
 
 ---
 
@@ -78,5 +76,5 @@ A small Angular application simulating a loan management dashboard with:
 3. Running balance is calculated as:
 
     First repayment: principal + interest – amount
-    
+
     Next repayments: last runningBalance – amount
