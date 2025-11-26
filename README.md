@@ -88,8 +88,6 @@ A small Angular application simulating a loan management dashboard with:
 
 cd Loan-Management-Mini-Dashboard
 
-# install dependencies
-npm install
+### Install dependencies - npm install
 
-# run application
-ng serve 
+### Run application - ng serve 
