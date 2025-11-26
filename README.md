@@ -7,7 +7,6 @@ A small Angular application simulating a loan management dashboard with:
 - 'Add Repayment' modal with reactive forms
 - Mock API using an in-memory service + RxJS
 
----
 
 ## Tech Stack
 
