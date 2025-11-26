@@ -1,0 +1,54 @@
+<div class="loan-detail-container">
+
+      <button class="back-btn" (click)="goBack()">
+                &lt; Back
+      </button>
+
+  <!-- Loan Summary -->
+  <div class="summary-card">
+    <h2>{{ loan.borrowerName }}</h2>
+
+    <div class="summary-row">
+      <span class="label">Loan Amount:</span>
+      <span class="value">₹{{ loan.loanAmount }}</span>
+    </div>
+
+    <div class="summary-row">
+      <span class="label">Outstanding Principal:</span>
+      <span class="value">₹{{ loan.outstandingPrincipal }}</span>
+    </div>
+
+    <div class="summary-row">
+      <span class="label">Outstanding Interest:</span>
+      <span class="value">₹{{ loan.outstandingInterest }}</span>
+    </div>
+
+    <button class="add-btn" (click)="openRepaymentModal()">
+      + Add Repayment
+    </button>
+  </div>
+
+  <!-- Repayment Table -->
+  <div class="table-container">
+    <h3>Repayment History</h3>
+
+    <table class="repayment-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Running Balance</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let r of loan.repayments">
+          <td>{{ r.date }}</td>
+          <td>₹{{ r.amount }}</td>
+          <td>₹{{ r.runningBalance }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

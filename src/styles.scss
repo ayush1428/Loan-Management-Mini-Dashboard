@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+/* ================================
+   GLOBAL DESIGN SYSTEM
+================================ */
+
+:root {
+  --bg: #f6f7fb;            
+  --card-bg: #ffffff;       
+  --muted: #6b7280;         
+  --text: #111827;          
+  --accent: #1976d2;        
+  --accent-hover: #125ca2;  
+  --border: #e5e7eb;        
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --container-width: 1100px;
+}
+
+/* Global resets */
+html, body { 
+  height: 100%; 
+  margin: 0; 
+  background: var(--bg);
+  font-family: Inter, Roboto, "Helvetica Neue", sans-serif;
+  color: var(--text);
+}
+
+/* Card container utility */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+/* GLOBAL: Angular Material dialog fix */
+.mat-mdc-dialog-surface {
+  padding: 24px !important;
+  border-radius: 12px !important;
+}
+
+/* Improve paginator */
+.mat-mdc-paginator {
+  border-radius: 8px;
+  background: #fff !important;
+}
+
+/* Make Material table edges smooth */
+.mat-elevation-z2 {
+  
+  overflow: hidden;
+}
+
+
+
+

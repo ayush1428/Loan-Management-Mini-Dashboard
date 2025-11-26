@@ -1,0 +1,80 @@
+/* ============================
+   Loan List Page
+============================ */
+
+.loan-list-container {
+  max-width: var(--container-width);
+  margin: 40px auto;
+}
+
+/* Header Row (Title + Search) */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.table-field{
+  border-radius: 16px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Search */
+.search-field {
+  width: 320px;
+  .mdc-text-field {
+    background: #fafafa !important;
+  }
+}
+
+/* Table Wrapper */
+.table-wrap {
+  @extend .card !optional;
+  padding: 0;
+}
+
+/* Header cells */
+.mat-header-cell {
+  background: #f4f4f4 !important;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333 !important;
+  padding: 14px 16px !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* Table rows */
+.mat-cell {
+  padding: 14px 16px !important;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+/* Alternating rows */
+.mat-row:nth-child(even) {
+  background: #fafafa !important;
+}
+
+/* Hover highlight */
+.table-row:hover {
+  background: #eef4ff !important;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+/* Align numeric columns */
+.mat-cell:nth-child(n+2) {
+  text-align: right;
+}
+
+/* Paginator styling */
+.mat-mdc-paginator {
+  padding: 10px 0;
+  background: transparent !important;
+}

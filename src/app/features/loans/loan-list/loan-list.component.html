@@ -1,0 +1,49 @@
+<div class="loan-list-container">
+
+  <!-- Search Bar -->
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Search by borrower name</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Type to search..." />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <!-- Loan Table -->
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
+     <!-- Table Header -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+     <!-- Clickable Row -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)="openLoanDetail(row.id)" class="table-row">
+    </tr>
+    
+    <!-- Borrower Name -->
+    <ng-container matColumnDef="borrowerName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Borrower </th>
+      <td mat-cell *matCellDef="let loan"> {{ loan.borrowerName }} </td>
+    </ng-container>
+
+    <!-- Loan Amount -->
+    <ng-container matColumnDef="loanAmount">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Loan Amount </th>
+      <td mat-cell *matCellDef="let loan"> ₹{{ loan.loanAmount }} </td>
+    </ng-container>
+
+    <!-- Outstanding Principal -->
+    <ng-container matColumnDef="outstandingPrincipal">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Principal </th>
+      <td mat-cell *matCellDef="let loan"> ₹{{ loan.outstandingPrincipal }} </td>
+    </ng-container>
+
+    <!-- Outstanding Interest -->
+    <ng-container matColumnDef="outstandingInterest">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Interest </th>
+      <td mat-cell *matCellDef="let loan"> ₹{{ loan.outstandingInterest }} </td>
+    </ng-container>
+
+  </table>
+
+  <!-- Pagination -->
+  <mat-paginator [pageSize]="8"></mat-paginator>
+
+</div>

@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Add Repayment</h2>
+
+<form [formGroup]="form">
+  <div mat-dialog-content class="modal-body">
+
+    <!-- Amount Field -->
+    <mat-form-field appearance="outline">
+      <mat-label>Amount</mat-label>
+      <input 
+        matInput
+        type="text"
+        formControlName="amount"
+        (input)="digitsOnly($event)"
+        placeholder="Enter amount"
+      />
+
+      <mat-error *ngIf="form.controls['amount'].hasError('required')">
+        Amount is required
+      </mat-error>
+      <mat-error *ngIf="form.controls['amount'].hasError('min')">
+        Amount must be greater than 0
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Date Field -->
+    <mat-form-field appearance="outline">
+      <mat-label>Date</mat-label>
+      <input 
+        matInput
+        type="date"
+        formControlName="date"
+      />
+
+      <mat-error *ngIf="form.controls['date'].hasError('required')">
+        Date is required
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+  <div mat-dialog-actions class="modal-actions">
+  <button class="action-btn cancel-btn" (click)="close()">Cancel</button>
+  <button class="action-btn submit-btn" (click)="submit()" [disabled]="form.invalid">
+    Submit
+  </button>
+</div>
+
+</form>

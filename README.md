@@ -1,27 +1,80 @@
-# LoanDashboard
+# Loan Management Dashboard (Frontend Assessment)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+A small Angular application simulating a loan management dashboard with:
 
-## Development server
+- Loan list screen (search + pagination)
+- Loan detail screen (summary + repayment history)
+- “Add Repayment” modal with reactive forms
+- Mock API using an in-memory service + RxJS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: 17.x
+- **Node**: 20.x
+- **Framework**: Angular CLI, TypeScript
+- **UI**: Angular Material (MDC)
+- **State & async**: RxJS, BehaviorSubject, Observables
+- **Styling**: SCSS
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Features
 
-## Running unit tests
+### Loan List Screen
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Displays each loan with:
+  - Borrower name
+  - Loan amount
+  - Outstanding principal
+  - Outstanding interest
+- Search by **borrower first name**:
+  - Case-insensitive
+  - Matches names starting with the entered text (`A` → Aarav, Aditya, Ayush, etc.)
+- Client-side pagination (Material `MatPaginator`)
+- Clickable rows:
+  - Clicking a row navigates to the **Loan Detail** screen for that loan
+- Pagination state preserved:
+  - When you open a loan and click **“\< Back”**, it returns to the **same page** in the loan list
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Loan Detail Screen
 
-## Further help
+- Shows a **summary card** for the selected loan:
+  - Borrower Name
+  - Loan Amount
+  - Outstanding Principal
+  - Outstanding Interest
+- A **Repayment History** table:
+  - Columns: Amount, Date, Running Balance
+  - Shows how the total outstanding reduces after each repayment
+- **“\< Back”** button:
+  - Navigates back to the loan list
+  - Preserves the last visited page index via query params
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+### Add Repayment Modal
+
+- Implemented using Angular Material `MatDialog`
+- Uses **Reactive Forms**:
+  - `amount` (required, `> 0`, numeric only)
+  - `date` (required, cannot be in the future)
+- Validation:
+  - Amount must be a positive number
+  - Date must be today or earlier
+- On submit:
+  - Simulates an API call (via RxJS `delay`)
+  - Adds a new repayment entry
+  - Updates **running balance**, **outstanding principal**, and **outstanding interest**
+  - UI updates immediately without page reload
+
+**Repayment logic:**
+
+1. Repayment always reduces **outstanding interest first**
+2. Any remaining amount reduces **outstanding principal**
+3. Running balance is calculated as:
+        - First repayment: principal + interest – amount
+        - Next repayments: last runningBalance – amount
