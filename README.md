@@ -7,6 +7,7 @@ A small Angular application simulating a loan management dashboard with:
 - 'Add Repayment' modal with reactive forms
 - Mock API using an in-memory service + RxJS
 
+---
 
 ## Tech Stack
 
@@ -34,6 +35,7 @@ A small Angular application simulating a loan management dashboard with:
 - Client-side pagination (Material `MatPaginator`)
 - Clickable rows:
   - Clicking a row navigates to the **Loan Detail** screen for that loan
+
 
 ---
 
